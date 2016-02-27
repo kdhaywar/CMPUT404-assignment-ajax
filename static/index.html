@@ -53,22 +53,19 @@ function sendJSONXMLHTTPRequest(url, objects, callback) {
     //XXX: POST to a URL
     //XXX: set the mimetype and the accept headers!
 		 // Remember to use application/json !
-		 //xhr.open("POST", url); //"POST", url);
-         //xhr.overrideMimeType("application/json"); 
-         //xhr.setRequestHeader('Accept', "*/*");
-         //xhr.send(objects)
 
-
-			 if (objects){ //POST
-				 xhr.open('POST', url);
-				 xhr.overrideMimeType("application/json");
-				 xhr.setRequestHeader("Accept", "application/json");
-				 xhr.send(JSON.stringify(objects));
-			 }
+		 if (objects){ //POST
+			 xhr.open('POST', url);
+			 xhr.overrideMimeType("application/json");
+			 xhr.setRequestHeader("Accept", "application/json");
+			 xhr.send(JSON.stringify(objects));
+		 }
 		 else { //GET
 			 xhr.open('GET', url);
 			 xhr.send();
-		 }
+		 } 
+
+
 
 
 }
@@ -80,7 +77,7 @@ world = {};
 function drawCircle(context,entity) {
     with(context) {
         beginPath();              
-        lineWidth = 3;
+        lineWidth = 1;
         var x = entity["x"];
         var y = entity["y"];
         //moveTo(x,y);

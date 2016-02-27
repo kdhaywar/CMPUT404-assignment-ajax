@@ -83,7 +83,7 @@ def update(entity):
     req_data = flask_post_json()
     for key in req_data:
         myWorld.update(entity,key,req_data[key])
-    return json.dumps(myWorld.get(entity)),200
+    return json.dumps(myWorld.get(entity))
 
 
 @app.route("/world", methods=['POST','GET'])
