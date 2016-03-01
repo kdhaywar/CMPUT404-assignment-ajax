@@ -74,15 +74,15 @@ def flask_post_json():
 
 @app.route("/")
 def hello():
-    return redirect("./static/index.html", 300)
+    return redirect("./static/index.html", 200)
 
 
 @app.route("/entity/<entity>", methods=['POST','PUT'])
 def update(entity):
     '''update the entities via this interface'''
-    req_data = flask_post_json()
-    for key in req_data:
-        myWorld.update(entity,key,req_data[key])
+    data = flask_post_json()
+    for key in data:
+        myWorld.update(entity,key,data[key])
     return json.dumps(myWorld.get(entity))
 
 
